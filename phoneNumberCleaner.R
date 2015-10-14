@@ -91,7 +91,7 @@ strings$sub_3 <- substr(strings$strings, 1,3)
 
 Countries <-
  c(
- 'United States or Canada', 'Russia or Kazakhstan', 'Egypt', 'South Africa', 'Greece', 'Netherlands',
+ 'United States','Canada', 'Russia', 'Kazakhstan', 'Egypt', 'South Africa', 'Greece', 'Netherlands',
  'Belgium', 'France', 'Spain', 'Hungary', 'Italy', 'Romania', 'Switzerland', 'Austria', 'United Kingdom', 'Denmark',
  'Sweden', 'Norway', 'Poland', 'Germany', 'Peru', 'Mexico', 'Cuba', 'Argentina', 'Brazil', 'Chile', 'Colombia', 'Venezuela',
  'Malaysia', 'Australia', 'Indonesia', 'Philippines', 'New Zealand or Pitcairn', 'Singapore', 'Thailand', 'Japan', 'South Korea', 'Vietnam', 'China', 'Turkey',
@@ -114,7 +114,7 @@ Countries <-
 
 
 code <- c(
- 1, 7, 20, 27, 30, 31, 32, 33, 34, 36, 39, 40, 41, 3, 44,
+ 1,1, 7, 7,20, 27, 30, 31, 32, 33, 34, 36, 39, 40, 41, 3, 44,
  45, 46, 47, 48, 49, 51, 52, 53, 54, 55, 56, 57, 58, 60, 61, 62, 63, 64, 65, 66, 81, 82, 84, 86, 90, 91, 92, 93,
  94, 95, 98, 211, 212, 213, 216, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240,
  241, 242, 243, 244, 245, 246, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 290,
@@ -126,7 +126,7 @@ code <- c(
 )
 
 languages <-
- c('English','Russian', 'Arabic (official), English and French widely understood by educated classes', 
+ c('English','English','Russian','Russian', 'Arabic (official), English and French widely understood by educated classes', 
  'IsiZulu (official) 22.7%, IsiXhosa (official) 16%, Afrikaans (official) 13.5%, English (official) 9.6%, Sepedi (official) 9.1%, Setswana (official) 8%, Sesotho (official) 7.6%, Xitsonga (official) 4.5%, siSwati (official) 2.5%, Tshivenda (official) 2.4%, isiNdebele (official) 2.1%, sign language 0.5%, other 1.6% (2011 est.)', 
  'Greek (official) 99%, other (includes English and French) 1%', 
  'Dutch (official)', 'Dutch (official) 60%, French (official) 40%, German (official) less than 1%', 
@@ -289,7 +289,7 @@ languages <-
 'Spanish (official)', 'Spanish (official)','English (official), Caribbean Hindustani (a dialect of Hindi), French, Spanish, Chinese', 
 'English (official)', 'English, English patois'
 )
-two_letter_country_code <- c('US or CA', 'RU or KZ', 'EG', 'ZA', 'GR', 
+two_letter_country_code <- c('US','CA', 'RU','KZ', 'EG', 'ZA', 'GR', 
  'NL', 'BE', 'FR', 'ES', 'HU', 'IT', 'RO', 'CH', 'AT', 'GB', 'DK', 'SE', 'NO', 'PL', 
  'DE', 'PE', 'MX', 'CU', 'AR', 'BR', 'CL', 'CO', 'VE', 'MY', 'AU', 'ID', 'PH', 
  'NZ', 'SG', 'TH', 'JP', 'KR', 'VN', 'CN', 'TR', 'IN', 'PK', 'AF', 'LK', 
@@ -324,7 +324,7 @@ States <-
  'NJ', 'MI', 'TX', 'OH', 'CA', 'FL', 'VA', 'CA', 'GA', 'MN', 'CA', 'IN', 'MS', 'GA', 'FL', 'IL', 'MA', 'NV', 'BC', 'IL', 'AB', 'MA', 'NS', 'KS', 'FL', 'PR', 'UT', 'VT', 'SC',
  'VA', 'CA', 'TX', 'ON', 'HI', 'MI', 'IN', 'FL', 'PA', 'IL', 'MO', 'TX', 'CA', 'QC', 'AB', 'NC', 'TX', 'CA', 'TX', 'PA', 'SC', 'NY', 'IL', 'NJ', 'FL', 'NJ', 'MA',
  'CA', 'KY', 'CT', 'NJ', 'FL', 'SC', 'TN', 'YT', 'AR', 'IL', 'QC', 'PA', 'TN', 'NS', 'TX', 'FL', 'ON', 'MI', 'AK', 'NJ', 'CA', 'NC', 'GA', 'KS', 'NY', 'TX', 'CA', 'NY', 'OK', 'NC', 'WI', 'CA', 'FL', 'AZ', 'NY', 'TN', 'CA', 'TX', 'OH', 'PR', 'TX', 'FL',
- 'MI', 'CA', 'CA', 'MN', 'FL', 'TX', 'NM', 'CT', 'CO', 'OR', 'TX', 'NJ', 'MO', 'MA', 'TX', 'NC', 'NC', 'LA', 'MI'
+ 'MI', 'CA', 'CA', 'MN', 'FL', 'TX', 'NM', 'CT', 'CO', 'OR', 'TX', 'NJ', 'MO', 'MA', 'TX', 'NC', 'NC', 'LA', 'MI', 'Toll Free','Toll Free','Toll Free','Toll Free'
  )
 
 area_codes <-
@@ -343,7 +343,7 @@ area_codes <-
  801, 802, 803, 804, 805, 806, 807, 808, 810, 812, 813, 814, 815, 816, 817, 818, 819, 825, 828, 830, 831, 832,
  835, 843, 845, 847, 848, 850, 856, 857, 858, 859, 860, 862, 863, 864, 865, 867, 870, 872, 873,
  878, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 912, 913, 914, 915, 916, 917, 918, 919, 920, 925, 927, 928, 929,
- 931, 935, 936, 937, 939, 940, 941, 947, 949, 951, 952, 954, 956, 957, 959, 970, 971, 972, 973, 975, 978, 979, 980, 984, 985, 989
+ 931, 935, 936, 937, 939, 940, 941, 947, 949, 951, 952, 954, 956, 957, 959, 970, 971, 972, 973, 975, 978, 979, 980, 984, 985, 989, 800, 888, 866, 877
  )
 
 
@@ -357,13 +357,12 @@ Country_codes$two_letter_country_code <- as.character(Country_codes$two_letter_c
 N_America_Numbers <- sqldf(
  "select s.*, NAC.states, NAC.area_codes
  from strings s
- join N_America_codes NAC
+ left join N_America_codes NAC
  on nac.area_codes = s.sub_3
- where (s.string_len = 10
-or s.string_len = 11)
- and (s.Provided_country_code like '%us%'
- or s.provided_country_code like '%ca%')"
+ where (s.provided_country_code = 'US'
+ or s.provided_country_code = 'CA')"
 )
+
 
 N_America_Numbers$languages <- "English"
 
@@ -372,9 +371,8 @@ int_numbers <- sqldf(
   from strings s
   left join Country_codes c
   on s.provided_country_code = c.two_letter_country_code
-  where c.two_letter_country_code not like '%US%'
-and c.two_letter_country_code not like '%CA%'
-"
+where s.provided_country_code not like '%US%'
+  and s.provided_country_code not like '%CA%'"
 )
 
 colnames(N_America_Numbers)<- c("string_len", "strings","Unique Identifier", "provided_country_code","Raw_Data",  "Error_Value", "sub_3",                
@@ -390,7 +388,7 @@ int_numbers[is.na(int_numbers$Error_Value),"strings"]<- paste("011",int_numbers[
 
 test<- rbind(int_numbers, N_America_Numbers)
 test<- unique(test)
-names(test)
+# names(test)
 output <-  test[,c("Unique Identifier", "provided_country_code","Phone Code", "Raw_Data","strings", "Error_Value", "Location", "languages")]
 output[grep("extension", output[,"strings"]),"Error_Value"] <- "Contains an Extension"
 
