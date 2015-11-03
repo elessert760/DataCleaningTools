@@ -1,0 +1,17 @@
+#splits multiple values in the same cell and stacks them up - you need to know the delimiter (you may need
+#to gsub various delimiters to a single value like | or ~ then split)
+
+df<- data.frame() #you will load a data.frame with multiple values within the same cell
+
+
+split <- str_split(df$column_name, pattern = "delimiter goes here")
+length<- max(sapply(split, length))
+column_headers <- paste("value", seq(1:length), sep = "")
+
+test <- df %>%
+    separate(column_name, column_headers ,sep = "delimiter") %>%
+    gather(key, value, value1:value`length of you column header vector`, na.rm = T) %>%
+    filter(value != "")
+
+test$key <- NULL
+test <- unique(test)
