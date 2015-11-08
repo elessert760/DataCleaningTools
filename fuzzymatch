@@ -1,0 +1,23 @@
+##order matters here, so in the for loop one should probably put the lookup table and the u_add should be the
+## vector to be mathced against the lookup table. There may be a faster way to do this though. I limited the length of the 
+## result using nchar because the max.distance function uses percentage @ 10% by default
+
+result <- data.frame()
+for (i in 1:length(u_sda)) {
+
+    matched <- as.data.frame(agrep(u_sda[i],
+                                   u_add, max.distance = 0.01,
+                                   costs = NULL,
+                                   ignore.case = T,
+                                   value = T,
+                                   useBytes = F))
+    colnames(matched) <- "Resulting Value"
+    label <- rep(u_sda[i],times = nrow(matched))
+    matched <- cbind(label, matched)
+    result <- rbind(result, matched)
+    result$label <- as.character(result$label)
+    result <- result[nchar(result$label)> 8,]
+}
+
+
+View(result)
