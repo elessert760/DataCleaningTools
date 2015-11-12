@@ -1,6 +1,7 @@
-##order matters here, so in the for loop one should probably put the lookup table and the u_add should be the
-## vector to be mathced against the lookup table. There may be a faster way to do this though. I limited the length of the 
-## result using nchar because the max.distance function uses percentage @ 10% by default
+##order matters here, so in the for loop one should probably put the lookup table first and the u_add should be the
+## vector to be matched against the lookup table. There may be a faster way to do this though. I limited the length of the 
+## result using nchar because the max.distance function uses percentage @ 10% by default 
+## so small strings get matched pretty liberally
 
 result <- data.frame()
 for (i in 1:length(u_sda)) {
