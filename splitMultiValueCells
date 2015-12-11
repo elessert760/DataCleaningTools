@@ -10,7 +10,7 @@ column_headers <- paste("value", seq(1:length), sep = "")
 
 test <- df %>%
     separate(column_name, column_headers ,sep = "delimiter") %>%
-    gather(key, value, value1:value`length of you column header vector`, na.rm = T) %>%
+    gather(key, value, column_headers, na.rm = T) %>%
     filter(value != "")
 
 test$key <- NULL
