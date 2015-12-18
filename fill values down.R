@@ -8,7 +8,7 @@ for (p in colnames(df)) {
 df <- df %>% unique()
 
 
-change <- which(df[,"column"] != "")
+change <- which(df[,"column"] != "" | is.na(df[,"column"]))
 
 for (p in colnames(df)) {
   for (i in change) {
