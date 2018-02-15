@@ -9,7 +9,7 @@ library(purrr)
 library(stringr)
 
 ui <- bootstrapPage(
-  theme = shinytheme("cosmo"),
+  theme = shinytheme("yeti"),
   titlePanel("Upload Data to split-stack"),
   sidebarLayout(
     sidebarPanel(
@@ -20,7 +20,7 @@ ui <- bootstrapPage(
                    'text/comma-separated-values,text/plain',
                    '.csv')
       ),
-      # selectInput("columns", "Which Column Contains the Identifier", ""),
+      selectInput("delim", "Which Delimiter?", choices = c(",", ";", ":", "<", "|", "{", "[")),
       selectInput("splits", "Which Column Contains the Data to Split?", ""),
       # textInput("usr", "Enter Your email address", placeholder = "yours@yours.com"),
       
@@ -50,20 +50,20 @@ server <- function(input, output, session) {
   })
   
   
-  outVar = reactive({
-    mydata = dat()
-    names(mydata)
-  })
-  
+  # outVar = reactive({
+  #   mydata = dat()
+  #   names(mydata)
+  # })
+  # 
   outVar2 = reactive({
     mydata = dat()
     names(mydata)
   })
   
-  observe({
-    updateSelectInput(session, "columns",
-                      choices = outVar())
-  })
+  # observe({
+  #   updateSelectInput(session, "delim",
+  #                     choices = outVar())
+  # })
   
   observe({
     updateSelectInput(session, "splits",
@@ -103,9 +103,11 @@ server <- function(input, output, session) {
       
     })
     
+    map_delim <- as.character(input$delim)
+    
     tmp <-
       loaded_data()[which(colnames(loaded_data()) == input$splits)] %>% as.list() %>%
-      map(str_split, pattern = ",", simplify = T) %>% 
+      map(str_split, pattern = map_delim, simplify = T) %>% 
       map(trimws)
     
     tmp <- tmp[[1]] %>% as_data_frame()
@@ -148,4 +150,3 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui = ui, server = server, options = list(host = "0.0.0.0", port= 8118))
-
