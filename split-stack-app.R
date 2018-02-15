@@ -22,8 +22,7 @@ ui <- bootstrapPage(
       ),
       selectInput("delim", "Which Delimiter?", choices = c(",", ";", ":", "<", "|", "{", "[")),
       selectInput("splits", "Which Column Contains the Data to Split?", ""),
-      # textInput("usr", "Enter Your email address", placeholder = "yours@yours.com"),
-      
+
       downloadButton('downloadData', 'Download Report')
     ),
     mainPanel(
@@ -50,21 +49,11 @@ server <- function(input, output, session) {
   })
   
   
-  # outVar = reactive({
-  #   mydata = dat()
-  #   names(mydata)
-  # })
-  # 
   outVar2 = reactive({
     mydata = dat()
     names(mydata)
   })
-  
-  # observe({
-  #   updateSelectInput(session, "delim",
-  #                     choices = outVar())
-  # })
-  
+
   observe({
     updateSelectInput(session, "splits",
                       choices = outVar2())
