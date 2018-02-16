@@ -20,9 +20,9 @@ ui <- bootstrapPage(
                    'text/comma-separated-values,text/plain',
                    '.csv')
       ),
-      selectInput("delim", "Which Delimiter?", choices = c(",", ";", ":", "<", "|", "{", `[` = "\\[", `Space` = '[[:space:]]+')),
+      selectInput("delim", "Which Delimiter?", choices = c(",", ";", ":", "<", `|` = "\\|", `{` = "\\{", `[` = "\\[", `Space` = '[[:space:]]+')),
       selectInput("splits", "Which Column Contains the Data to Split?", ""),
-
+      
       downloadButton('downloadData', 'Download Report')
     ),
     mainPanel(
@@ -53,7 +53,7 @@ server <- function(input, output, session) {
     mydata = dat()
     names(mydata)
   })
-
+  
   observe({
     updateSelectInput(session, "splits",
                       choices = outVar2())
@@ -139,3 +139,4 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui = ui, server = server, options = list(host = "0.0.0.0", port= 8118))
+
