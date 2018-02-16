@@ -20,7 +20,7 @@ ui <- bootstrapPage(
                    'text/comma-separated-values,text/plain',
                    '.csv')
       ),
-      selectInput("delim", "Which Delimiter?", choices = c(",", ";", ":", "<", "|", "{", "[")),
+      selectInput("delim", "Which Delimiter?", choices = c(",", ";", ":", "<", "|", "{", `[` = "\\[", `Space` = '[[:space:]]+')),
       selectInput("splits", "Which Column Contains the Data to Split?", ""),
 
       downloadButton('downloadData', 'Download Report')
