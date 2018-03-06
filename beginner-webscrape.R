@@ -36,5 +36,6 @@ for (i in new_urls){
   print(i)
   
 }
+
 details %>% bind_rows() %>% t() %>% View
 
