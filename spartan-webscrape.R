@@ -14,7 +14,7 @@ i <- 1
 
 
 
-while (length(to_be_visited) > 0 & i < 25) {
+while (length(to_be_visited) > 0 ) {
   
   # 1. Select the next page in to_be_visited
   current_url <- to_be_visited[1]

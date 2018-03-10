@@ -31,7 +31,7 @@ for (i in new_urls){
     html_nodes(".biz-hours") %>% 
     html_text()
   
-  # details[[i]] %<>% gsub(., pattern = "\n+", replacement = "") %>% gsub(., pattern = "[[:space:]]+", replacement = " ")
+  details[[i]] %<>% gsub(., pattern = "\n+", replacement = "") %>% gsub(., pattern = "[[:space:]]+", replacement = " ")
   
   print(i)
   
